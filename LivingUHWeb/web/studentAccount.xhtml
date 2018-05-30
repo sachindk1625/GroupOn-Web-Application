@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>My Account</title>
+    </head>
+    <body>
+        <h:form> 
+            <div><p>Welcome, #{userLogin.id}</p></div>
+            <p>
+                These are the things you can do:<br></br>
+                <h:graphicImage width="400" height="250" value="sell.jpg" /><br></br>
+                <h:commandButton id="buy" value="buy Items"  
+                                 action="buyItems.xhtml" />
+                
+                <h:commandButton id="check" value="Check you order status"  
+                                 action="orderStatus.xhtml" />  
+                &nbsp;&nbsp;
+               <br></br>
+                <h:commandButton id="SignOut" value="Sign Out"  
+                                action="#{userLogin.signOut()}" />    
+            </p>
+        </h:form>
+    </body>
+</html>
+

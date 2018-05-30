@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Add items</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h3>Add items here</h3>
+            <h:graphicImage width="400" height="250" value="additems.png" />
+            <p>Please enter the name of the item<br></br>
+                <h:inputText id="name" required ="true" 
+                             requiredMessage="The name cannot be empty"
+                             title="Please enter an item name"
+                             value="#{userActions.itemname}">
+                </h:inputText>
+            </p>
+            <p>Please enter the item category<br></br>
+                <h:inputText id="cat" required ="true" 
+                             requiredMessage="The category cannot be empty"
+                             title="Please enter the category"
+                             value="#{userActions.category}">
+                </h:inputText>
+            </p>
+            <p>Please enter the keep alive count<br></br>
+                <h:inputText id="alive" required ="true" 
+                             requiredMessage="The count cannot be empty"
+                             title="Please enter the count"
+                             value="#{userActions.aliveCount}">
+                </h:inputText>
+            </p>
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="confirmAddition.xhtml" />
+            </p>
+
+        </h:form>
+    </h:body>
+</html>
+

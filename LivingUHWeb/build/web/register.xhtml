@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Registration</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+
+    </h:head>
+    <h:body>       
+        <h:form>
+            <h3>Register here</h3>
+            <h:graphicImage value="registration.jpg" />
+            <p>Please enter a username of your choice<br></br>
+                <h:inputText id="username" required ="true" 
+                             requiredMessage="The username cannot be empty"
+                             title="Please enter a username"
+                             value="#{user.id}">
+                </h:inputText>
+            </p>
+
+            <p>Please enter password<br></br>
+                <h:inputText id="pwd" required ="true" 
+                             requiredMessage="The password field cannot be empty"
+                             title="Please enter your password"
+                             value="#{user.password}"
+                             validatorMessage="The length of your password 
+                             must be between 8 and 12.">
+                    <f:validateLength maximum="12" minimum="8" />
+                </h:inputText>
+            </p>
+
+            <p>Please choose if you are a seller or a customer<br></br>
+                <h:selectOneRadio id="info" value="#{user.isSeller}">
+                    <f:selectItem itemValue="#{true}" itemLabel="I am a seller" />
+                    <f:selectItem itemValue="#{false}" itemLabel="I am a student" />
+                </h:selectOneRadio>
+            </p>
+
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="confirmRegistration.xhtml" />
+            </p>
+
+        </h:form>
+
+    </h:body>
+</html>
+
